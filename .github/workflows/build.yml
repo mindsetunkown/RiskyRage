@@ -1,0 +1,26 @@
+name: Build Risky Rage
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up JDK
+      uses: actions/setup-java@v3
+      with:
+        distribution: temurin
+        java-version: 25
+    - name: Compile Java plugin
+      run: javac -cp "paper-api-1.21.10-R0.1-SNAPSHOT.jar" RiskyRage.java
+    - name: Make JAR
+      run: jar cf RiskyRage-1.0.jar RiskyRage.class plugin.yml config.yml
+    - name: Upload JAR artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: RiskyRage-jar
+        path: RiskyRage-1.0.jar
