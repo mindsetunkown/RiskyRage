@@ -1,0 +1,7 @@
+name: RiskyRage
+version: 1.0
+main: com.kouki.riskyrage.RiskyRage
+api-version: 1.21
+author: frayzk
+depend: [ViaVersion, ViaBackwards, ViaRewind]
+commands: {}

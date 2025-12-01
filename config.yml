@@ -1,0 +1,10 @@
+rage:
+  max: 100
+  gain-per-hit: 10
+  decay-per-second: 1
+  transfer-percent: 0.25
+buffs:
+  strength-level: 1
+  speed-level: 1
+  jump-level: 1
+  health-loss-per-second: 1
